@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+pydantic
+pydantic[email]
+python-dotenv
+langchain
+google-generativeai
+python-multipart
+pypdf2
+python-docx 
+pydantic_settings
+langchain_google_genai
