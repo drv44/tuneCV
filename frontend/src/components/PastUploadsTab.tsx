@@ -51,21 +51,21 @@ export function PastUploadsTab() {
                 <TableCell>{resume.email}</TableCell>
                 <TableCell>{resume.phone}</TableCell>
                 <TableCell>
-                  <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+                <Dialog open={modalOpen} onOpenChange={setModalOpen}>
                     <DialogTrigger asChild>
-                      <Button onClick={() => handleDetails(resume.id)}>Details</Button>
+                        <Button onClick={() => handleDetails(resume.id)}>Details</Button>
                     </DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
+                    <DialogContent className="max-w-2xl w-full">
+                        <DialogHeader>
                         <DialogTitle>Resume Details</DialogTitle>
-                      </DialogHeader>
-                      {selectedResume ? (
+                        </DialogHeader>
+                        {selectedResume ? (
                         <ResumeDetailsDisplay data={selectedResume} />
-                      ) : (
+                        ) : (
                         <Spinner />
-                      )}
+                        )}
                     </DialogContent>
-                  </Dialog>
+                </Dialog>
                 </TableCell>
               </TableRow>
             ))}
