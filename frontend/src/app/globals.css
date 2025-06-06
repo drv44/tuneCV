@@ -119,3 +119,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+[data-state="open"] > .fixed.inset-0.bg-black {
+  background-color: rgba(255,255,255,0.7) !important; /* or use bg-white/70 in Tailwind */
+  backdrop-filter: blur(2px);
+}

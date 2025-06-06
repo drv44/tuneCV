@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -20,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">AI Resume Analyzer</span>
             </div>
             <a
-              href="https://github.com/your-repo" // <-- update with your repo if public
+              href="https://github.com/your-repo" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-blue-600 transition"
@@ -31,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         {children}
         <footer className="w-full border-t bg-white/80 backdrop-blur py-4 mt-8 text-center text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} TuneCV. All rights reserved.
+        Made by drv
         </footer>
       </body>
     </html>

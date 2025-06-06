@@ -52,20 +52,22 @@ export function PastUploadsTab() {
                 <TableCell>{resume.phone}</TableCell>
                 <TableCell>
                 <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-                    <DialogTrigger asChild>
-                        <Button onClick={() => handleDetails(resume.id)}>Details</Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl w-full">
-                        <DialogHeader>
+                  <DialogTrigger asChild>
+                    <Button onClick={() => handleDetails(resume.id)}>Details</Button>
+                  </DialogTrigger>
+                    <DialogContent className="max-w-2xl w-full bg-white">
+                      <DialogHeader>
                         <DialogTitle>Resume Details</DialogTitle>
-                        </DialogHeader>
-                        {selectedResume ? (
-                        <ResumeDetailsDisplay data={selectedResume} />
-                        ) : (
-                        <Spinner />
-                        )}
+                      </DialogHeader>
+                        <div className="max-h-[80vh] overflow-auto">
+                            {selectedResume ? (
+                            <ResumeDetailsDisplay data={selectedResume} />
+                            ) : (
+                            <Spinner />
+                            )}
+                        </div>
                     </DialogContent>
-                </Dialog>
+                  </Dialog>
                 </TableCell>
               </TableRow>
             ))}

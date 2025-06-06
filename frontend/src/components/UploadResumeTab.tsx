@@ -120,7 +120,7 @@ export function ResumeDetailsDisplay({ data }: { data: any}) {
                     <span key={idx} className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">{skill}</span>
                     ))}
                 </div>
-                </div>
+            </div>
             <Accordion type="single" collapsible>
                 {data.work_experience?.map((exp: any, idx: number) => (
                     <AccordionItem value={`exp-${idx}`} key={idx}>
@@ -138,7 +138,7 @@ export function ResumeDetailsDisplay({ data }: { data: any}) {
             </Accordion>
             <div>
                 <strong>LLM Analysis:</strong>
-                <div className="bg-gray-50 rounded p-2 max-h-60 overflow-auto text-xs">
+                <div className="bg-gray-50 rounded p-2 max-h-60 overflow-auto text-xs mt-2">
                     <pre className="bg-gray-100 p-2 rounded text-xs overflow-x-auto">
                         {JSON.stringify(data.llm_analysis, null, 2)}
                     </pre>

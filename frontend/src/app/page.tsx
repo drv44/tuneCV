@@ -4,8 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { UploadResumeTab } from "@/components/UploadResumeTab";
 import { PastUploadsTab } from "@/components/PastUploadsTab";
+import { useState } from "react";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("upload");
   return (
     <main className="container mx-auto py-8">
       {/* Hero Section */}
@@ -15,8 +17,20 @@ export default function Home() {
           Upload your resume and get instant, actionable feedback and upskilling suggestions from AI.
         </p>
         <div className="flex justify-center gap-4">
-          <a href="#upload" className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">Get Started</a>
-          <a href="#history" className="bg-white border border-blue-600 text-blue-600 px-6 py-2 rounded shadow hover:bg-blue-50 transition">View Past Uploads</a>
+          <button
+            type="button"
+            className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"
+            onClick={() => setActiveTab("upload")}
+          >
+            Get Started
+          </button>
+          <button
+            type="button"
+            className="bg-white border border-blue-600 text-blue-600 px-6 py-2 rounded shadow hover:bg-blue-50 transition"
+            onClick={() => setActiveTab("history")}
+          >
+            View Past Uploads
+          </button>
         </div>
       </section>
 
@@ -26,7 +40,7 @@ export default function Home() {
           <CardTitle className="text-2xl text-center">TuneCV Resume Analyzer</CardTitle>
         </CardHeader>
         <CardContent>
-          <Tabs>
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
             <div className="w-1/2 mx-auto">
               <TabsList className="flex justify-center w-full mb-4">
                 <TabsTrigger value="upload" className="flex-1">Upload Resume</TabsTrigger>
