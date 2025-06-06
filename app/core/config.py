@@ -7,13 +7,6 @@ from dotenv import load_dotenv
 # Construct the path to the .env file relative to this config.py file
 # Assuming .env is in the tuneCV/ directory, and config.py is in tuneCV/app/core/
 
-POSTGRES_USER = "drv"  # Or your chosen username
-POSTGRES_PASSWORD = "Drv.skr%40123" # Your chosen password
-POSTGRES_SERVER = "localhost" # Or 127.0.0.1
-POSTGRES_PORT = "5432"
-POSTGRES_DB = "tunecv_DB" # Your chosen database name
-
-DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), ".env")
 load_dotenv(dotenv_path=env_path)
 
@@ -21,8 +14,8 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "TuneCV"
     API_V1_STR: str = "/api/v1"
     
-    # DATABASE_URL: str | None = os.getenv("DATABASE_URL")
-    DATABASE_URL: str | None = DATABASE_URL
+    DATABASE_URL: str | None = os.getenv("DATABASE_URL")
+    # DATABASE_URL: str | None = DATABASE_URL
     GOOGLE_API_KEY: str | None = os.getenv("GOOGLE_API_KEY")
 
     # Optional: Add more settings as needed, e.g., for LLM model name
