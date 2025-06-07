@@ -91,12 +91,18 @@ Below are some screenshots demonstrating the key features and user interface of 
 |--------------|---------------|----------------|
 | ![LLM Analysis](docs/output_images/llm_analysis.png) | ![Upload History](docs/output_images/resume_upload_history.png) | ![Resume Details](docs/output_images/uploaded_resume_details.png) |
 
-- The **Home Page** welcomes users and provides navigation.
+| Database Schema |
+|-----------------|
+| ![Database Schema](docs/output_images/database.png) |
+
+- **Home Page** welcomes users and provides navigation.
 - **Resume Upload** allows users to submit their resume for analysis.
 - **Upload Output** shows instant AI-powered feedback and suggestions.
 - **LLM Analysis** displays detailed insights from the language model.
 - **Upload History** lets users view past uploads.
 - **Resume Details** provides a modal with in-depth feedback for each resume.
+
+- **Database Schema** shows the structure of how resumes, feedback, and user data are organized in the backend.
 
 ---
 
